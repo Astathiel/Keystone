@@ -1,48 +1,47 @@
-# Keystone 📝✨
+Keystone 📝✨
+A personal planner web application built with HTML, CSS, and vanilla JavaScript. Named 'Keystone' because it's designed to be the central, essential piece that holds your day's plans and thoughts together.
 
-A personal desktop planner application built with JavaSript/React. Named 'Keystone' because it's designed to be the central, essential piece that holds your day's plans and thoughts together.
+This project started as a Python desktop application but pivoted to a web-based approach to achieve a more flexible and modern user interface.
 
----
-
-## Core Features 🎯
-
+Core Features 🎯
 This planner aims to integrate several tools into one clean interface:
 
-* **🗓️ Calendar:** A visual way to track appointments and important dates.
-* **✅ To-Do List:** Manage daily tasks with satisfying checkboxes.
-* **🧠 Brain Dump:** A free-form section to get all your thoughts out without structure.
-* **📌 "Remember" List:** A place for important notes that aren't tasks (e.g., birthdays, ideas).
-* **⭐ Top Priorities:** Highlight the most critical tasks for the day to maintain focus.
-* **😊 Daily Mood Tracker:** A simple 1-5 scale to log and reflect on your daily well-being.
+🗓️ Calendar: A visual way to track appointments, add events, and see notes for specific days.
 
----
+✅ To-Do List: Manage daily tasks with satisfying checkboxes.
 
-## Tech Stack & Libraries 💻
+🧠 Brain Dump: A free-form section to get all your thoughts out without structure.
 
-* **Language:** **JavaSript/React**
-* **GUI Framework:** *[You can fill this in later, e.g., CustomTkinter, PyQt, Tkinter]*
-* **Data Storage:** *[You can fill this in later, e.g., JSON for simplicity or SQLite for a local database]*
+📌 "Remember" List: A place for important notes that aren't tasks (e.g., birthdays, ideas).
 
----
+⭐ Top Priorities: Highlight the most critical tasks for the day to maintain focus.
 
-## Project Goals 🧠
+😊 Daily Mood Tracker: A simple 1-5 scale to log and reflect on your daily well-being.
 
-The primary goal of this project is to learn and improve my skills in:
+Tech Stack & Libraries 💻
+Structure: HTML5
 
-1.  **GUI Development:** Building an interactive and intuitive user interface from scratch.
-2.  **Object-Oriented Programming (OOP):** Structuring the code in a clean, modular, and scalable way.
-3.  **Data Persistence:** Saving and loading user data locally.
-4.  **Application Packaging:** Turning the final JavaSript/React script into a standalone executable file.
-5.  **UI/UX Design Principles:** Thinking about the user experience and creating a pleasant-looking application.
+Styling: CSS3 (Custom properties, Flexbox, Grid)
 
----
+Logic: Vanilla JavaScript (ES6+)
 
-## Current Status 🚀
+Design Inspiration: The UI was initially prototyped in Figma and translated from a React/TSX component library into a clean, framework-free web application.
 
-Currently in the **planning and design phase**. Next steps involve creating UI mockups and then beginning the initial coding of the main window and features.
+Project Goals 🧠
+The primary goal of this project is to learn and improve skills in:
 
----
+DOM Manipulation: Building a dynamic, single-page application (SPA) entirely with vanilla JavaScript.
 
-## Mockups & Screenshots 🎨
+State Management: Handling the application's state (tasks, events, etc.) within JavaScript objects and re-rendering the UI as needed.
 
-*(This section will be updated with UI designs and application screenshots as development progresses.)*
+Modern CSS: Using custom properties (variables) and advanced layouts to create a beautiful, responsive, and themeable interface.
+
+Event Handling: Managing all user interactions, from button clicks to form submissions.
+
+Translating Design to Code: Accurately converting a component-based design into a modular, file-based web project.
+
+Current Status 🚀
+The core user interface for all features has been successfully built. The application is functional and styled. Next steps will involve refactoring, adding data persistence (e.g., using localStorage or a backend service), and further polishing the user experience.
+
+Screenshots 🎨
+(This section can be updated with screenshots of the final, running web application.)
