@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystone Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div id="sidebar-header-content" class="sidebar-header-content">
+                    <h1 class="app-title">Keystone</h1>
+                </div>
+                <button id="sidebar-toggle" class="icon-button" aria-label="Toggle sidebar">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul id="nav-list"></ul>
+            </nav>
+            <div id="sidebar-footer" class="sidebar-footer">
+                <p>Stay organized with nature's calm</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="main-header">
+                <h2 id="main-title" class="main-title"></h2>
+                <div id="current-date" class="current-date"></div>
+            </header>
+            <main class="content-wrapper">
+                <div id="content-area"></div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- ============================================= -->
+    <!-- HIDDEN TEMPLATES FOR EACH VIEW                -->
+    <!-- ============================================= -->
+    <div class="templates">
+
+        <!-- Calendar Template -->
+        <template id="template-calendar">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <h3 class="card-title">Calendar</h3>
+                    </div>
+                    <div class="calendar-nav">
+                        <button id="prev-month-btn" class="button button-outline button-sm">
+                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <span id="month-year-label" class="month-year-label"></span>
+                        <button id="next-month-btn" class="button button-outline button-sm">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="calendar-grid" class="calendar-grid"></div>
+                    <div class="today-footer">
+                        <p id="today-full-date"></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- To-Do List Template -->
+        <template id="template-todos">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">To-Do List</h3>
+                    <span id="todo-counter" class="counter-chip">0/0 completed</span>
+                </div>
+                <div class="card-content">
+                    <div class="input-group">
+                        <input id="todo-input" type="text" placeholder="Add a new task..." class="input-field">
+                        <button id="add-todo-btn" class="button button-primary button-sm">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div id="todo-list" class="item-list"></div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- Top Priorities Template -->
+        <template id="template-priorities">
+            <div class="card">
+                <div class="card-header">
+                     <div class="card-title-group">
+                        <svg class="icon text-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                        <h3 class="card-title">Top Priorities</h3>
+                    </div>
+                    <span id="priority-counter" class="counter-chip">0/0</span>
+                </div>
+                <div class="card-content">
+                    <div id="priority-input-container" class="input-group">
+                        <input id="priority-input" type="text" placeholder="Add a top priority (max 5)..." class="input-field">
+                        <button id="add-priority-btn" class="button button-primary button-sm">
+                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div id="priority-list" class="item-list"></div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Remember List Template -->
+        <template id="template-remember">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Remember List</h3>
+                    <button id="show-remember-form-btn" class="button button-outline button-sm">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Add
+                    </button>
+                </div>
+                <div class="card-content">
+                    <div id="remember-form" class="add-item-form hidden">
+                        <input id="remember-title-input" type="text" placeholder="Remember title..." class="input-field">
+                        <textarea id="remember-content-input" class="textarea" placeholder="Details (optional)..." rows="3"></textarea>
+                        <div class="form-actions">
+                            <button id="add-remember-btn" class="button button-primary button-sm">Add Item</button>
+                            <button id="cancel-remember-btn" class="button button-outline button-sm">Cancel</button>
+                        </div>
+                    </div>
+                    <div id="remember-list" class="item-list"></div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- Brain Dump Template -->
+        <template id="template-braindump">
+             <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.6.11.82-.26.82-.57v-2.1c-2.78.6-3.37-1.34-3.37-1.34-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .31.22.69.82.57A10 10 0 0 0 22 12a10 10 0 0 0-10-10z"></path></svg>
+                        <h3 class="card-title">Brain Dump</h3>
+                    </div>
+                </div>
+                 <div class="card-content">
+                    <textarea id="braindump-input" class="textarea" placeholder="What's on your mind? (Ctrl+Enter to save)" rows="4"></textarea>
+                    <button id="add-braindump-btn" class="button button-primary w-full">Save Thought</button>
+                    <div id="braindump-list" class="item-list"></div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- Daily Mood Template -->
+        <template id="template-mood">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Daily Mood</h3>
+                </div>
+                <div class="card-content text-center">
+                    <p class="text-muted" id="mood-date-label"></p>
+                    <div id="mood-selector" class="mood-selector">
+                        <!-- Mood buttons will be injected by JS -->
+                    </div>
+                    <div id="mood-feedback" class="mood-feedback">
+                        <!-- Feedback and save button appear here -->
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
