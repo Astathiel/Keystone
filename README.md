@@ -1,6 +1,6 @@
 # Keystone 📝✨
 
-A personal desktop planner application built with Python. Named 'Keystone' because it's designed to be the central, essential piece that holds your day's plans and thoughts together.
+A personal desktop planner application built with JavaSript/React. Named 'Keystone' because it's designed to be the central, essential piece that holds your day's plans and thoughts together.
 
 ---
 
@@ -19,7 +19,7 @@ This planner aims to integrate several tools into one clean interface:
 
 ## Tech Stack & Libraries 💻
 
-* **Language:** **Python**
+* **Language:** **JavaSript/React**
 * **GUI Framework:** *[You can fill this in later, e.g., CustomTkinter, PyQt, Tkinter]*
 * **Data Storage:** *[You can fill this in later, e.g., JSON for simplicity or SQLite for a local database]*
 
@@ -32,7 +32,7 @@ The primary goal of this project is to learn and improve my skills in:
 1.  **GUI Development:** Building an interactive and intuitive user interface from scratch.
 2.  **Object-Oriented Programming (OOP):** Structuring the code in a clean, modular, and scalable way.
 3.  **Data Persistence:** Saving and loading user data locally.
-4.  **Application Packaging:** Turning the final Python script into a standalone executable file.
+4.  **Application Packaging:** Turning the final JavaSript/React script into a standalone executable file.
 5.  **UI/UX Design Principles:** Thinking about the user experience and creating a pleasant-looking application.
 
 ---
