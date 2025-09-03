@@ -65,8 +65,24 @@
                 </div>
                 <div class="card-content">
                     <div id="calendar-grid" class="calendar-grid"></div>
-                    <div class="today-footer">
-                        <p id="today-full-date"></p>
+                    <!-- This section is hidden by default and appears when a day is clicked -->
+                    <div id="calendar-details-section" class="calendar-details hidden">
+                        <h4 id="details-date-header"></h4>
+                        <div id="day-events-list" class="item-list"></div>
+                        <div class="add-item-form">
+                            <h5 class="form-title">Add New Event</h5>
+                             <div class="input-group">
+                                <input id="event-title-input" type="text" placeholder="Event title..." class="input-field">
+                                <select id="event-type-select" class="input-field">
+                                    <option value="event">Event</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="note">Note</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button id="add-event-btn" class="button button-primary button-sm">Add to Day</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
